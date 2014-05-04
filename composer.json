@@ -7,7 +7,10 @@
             "email": "hilton@janfield.ca"
         }
     ],
+
+    "minimum-stability": "dev",
     "require": {
+        "php": ">=5.4.0",
         "yiisoft/yii2": "*"
     },
     "autoload": {
