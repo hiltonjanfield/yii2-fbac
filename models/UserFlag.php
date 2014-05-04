@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2_fbac\models;
+namespace hiltonjanfield\FBAC\models;
 
 use Yii;
 use yii\db\ActiveRecord;
