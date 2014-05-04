@@ -8,13 +8,13 @@ namespace yii2_fbac\models;
 /**
  * Class User
  * Extends Yii's default User component with functionality for Flag-Based Access Control.
- * See also \hiltonjanfield\FBAC\Controller for more.
+ * See also \hiltonjanfield\yii2_fbac\Controller for more.
  *
  * Usage:
  * Add to your app's Yii config:
  * 'components' => [
  *     'user' => [
- *         'class' => 'hiltonjanfield\FBAC\User',
+ *         'class' => 'hiltonjanfield\yii2_fbac\User',
  *         // additional options here
  *     ]
  * ]

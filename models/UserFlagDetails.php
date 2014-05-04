@@ -1,6 +1,6 @@
 <?php
 
-namespace FBAC\models;
+namespace yii2_fbac\models;
 
 class UserFlagDetails extends \yii\db\ActiveRecord
 {

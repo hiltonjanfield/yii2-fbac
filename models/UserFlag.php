@@ -1,6 +1,6 @@
 <?php
 
-namespace FBAC\models;
+namespace yii2_fbac\models;
 
 use Yii;
 use yii\db\ActiveRecord;
