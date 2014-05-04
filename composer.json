@@ -1,0 +1,13 @@
+{
+    "name": "hiltonjanfield/yii2-fbac",
+    "description": "Flag Based Access Control system for Yii 2.",
+    "authors": [
+        {
+            "name": "Hilton Janfield",
+            "email": "hilton@janfield.ca"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    }
+}
