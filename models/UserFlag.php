@@ -2,10 +2,6 @@
 
 namespace hiltonjanfield\FBAC\models;
 
-use Yii;
-use yii\db\ActiveRecord;
-use common\models\User;
-
 /**
  * This is the model class for table "user_flags".
  *
@@ -15,7 +11,7 @@ use common\models\User;
  *
  * @property User $user
  */
-class UserFlag extends ActiveRecord
+class UserFlag extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
