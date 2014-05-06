@@ -78,25 +78,26 @@ class User extends \yii\web\User
 
         $flags = $this->identity->{$this->_source};
 
-        if ($flags instanceof \yii\db\ActiveRecord) {
-            // If `source` is a model, load from model.
-            foreach ($flags as $item) {
-                $this->_flags[] = $item->{$this->_columnName};
-            }
-
-        } elseif (is_array($flags)) {
-            // If `source` is an array for some reason (perhaps pre-processed by a User model?),
-            // verify that they are strings and load. We don't want objects, arrays, etc to be loaded in.
-            foreach ($flags as $item) {
-                if (is_string($item)) {
-                    $this->_flags[] = $item;
-                }
-            }
-
-        } elseif (is_string($flags)) {
+        if (is_string($flags)) {
             // If `source` is a string (presumably a delimited string), use it.
             $this->_flags = explode($this->_delimiter, $flags);
 
+        } elseif (is_array($flags)) {
+            if (isset($flags[0]) && $flags[0] instanceof \yii\db\ActiveRecord) {
+                // If `source` is an array of models, load from the models.
+                foreach ($flags as $item) {
+                    $this->_flags[] = $item->{$this->_columnName};
+                }
+
+            } else {
+                // If `source` is an array for some reason (perhaps pre-processed by a User model?),
+                // verify that they are strings and load. We don't want objects, arrays, etc to be loaded in.
+                foreach ($flags as $item) {
+                    if (is_string($item)) {
+                        $this->_flags[] = $item;
+                    }
+                }
+            }
         } else {
             throw new \yii\base\ErrorException('User flag source is not an acceptable data type.');
         }
